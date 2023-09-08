@@ -10,11 +10,14 @@ import { SidebarItem } from "@/components/SidebarItem";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 
+import { Song } from "@/types";
+
 interface SidebarProps {
+  songs: Song[];
   children: React.ReactNode;
 }
 
-export function Sidebar({ children }: SidebarProps) {
+export function Sidebar({ songs, children }: SidebarProps) {
   const pathname = usePathname();
 
   const routes = useMemo(
@@ -63,7 +66,7 @@ export function Sidebar({ children }: SidebarProps) {
           </div>
         </Box>
         <Box className="overflow-y-auto h-full">
-          <Library />
+          <Library songs={songs} />
         </Box>
       </div>
       <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
