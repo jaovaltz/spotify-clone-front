@@ -6,7 +6,7 @@ import { useLoadImage } from "@/hooks/useLoadImage";
 import { Song } from "@/types";
 
 interface MediaItemProps {
-  onClick: (id: string) => void;
+  onClick?: (id: string) => void;
   song: Song;
 }
 
