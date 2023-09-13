@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import {
   useSessionContext,
   useSupabaseClient,
@@ -10,7 +11,6 @@ import { useRouter } from "next/navigation";
 
 import { Modal } from "@/components/Modal";
 import { useAuthModal } from "@/hooks/useAuthModal";
-import { useEffect } from "react";
 
 export function AuthModal() {
   const supabaseClient = useSupabaseClient();
